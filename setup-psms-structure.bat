@@ -4,16 +4,22 @@ setlocal enabledelayedexpansion
 :: ==============================================================
 :: CONFIGURATION
 :: ==============================================================
+
+:: Name of the Angular project folder
 set PROJECT_NAME=preclinical-study-management
+
+:: Top-level feature areas you want in your app
 set FEATURE_LIST=study animal protocol report admin
+
+:: Remember where we started (root directory)
 set ROOT_DIR=%cd%
 
 echo.
 echo ==============================================================
-echo   Creating Angular 18 Project: %PROJECT_NAME%
+echo   Creating Angular Project: %PROJECT_NAME%
 echo   Environment:
-echo      Node  : v24.11.0
-echo      NPM   : 11.6.1
+echo      Node        : v24.11.0
+echo      NPM         : 11.6.1
 echo      Angular CLI : 20.3.9
 echo ==============================================================
 
@@ -28,6 +34,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
+:: Move into the new project folder
 cd %PROJECT_NAME%
 
 echo.
@@ -35,7 +42,9 @@ echo ==============================================================
 echo   2. Creating Enterprise Folder Structure
 echo ==============================================================
 
-:: Core and Shared
+:: ----------------- CORE & SHARED LAYERS -----------------
+
+:: Core: singletons and app-level services
 mkdir src\app\core
 mkdir src\app\core\services
 mkdir src\app\core\interceptors
@@ -43,19 +52,22 @@ mkdir src\app\core\models
 mkdir src\app\core\guards
 mkdir src\app\core\constants
 
+:: Shared: reusable UI pieces, directives, pipes, validators
 mkdir src\app\shared
 mkdir src\app\shared\components
 mkdir src\app\shared\directives
 mkdir src\app\shared\pipes
 mkdir src\app\shared\validators
 
-:: State Management & Config
+:: ----------------- STATE, THEME, CONFIG -----------------
+
 mkdir src\app\store
 mkdir src\app\theme
 mkdir src\app\config
 mkdir src\app\testing
 
-:: Feature Modules
+:: ----------------- FEATURE FOLDERS -----------------
+
 mkdir src\app\features
 for %%f in (%FEATURE_LIST%) do (
     mkdir src\app\features\%%f
@@ -64,14 +76,17 @@ for %%f in (%FEATURE_LIST%) do (
     mkdir src\app\features\%%f\models
 )
 
-:: Assets
-mkdir src\assets\mock
-mkdir src\assets\images
-mkdir src\assets\styles
+:: ----------------- STATIC ASSETS (Vite-style) -----------------
+
+:: With Angular CLI 20 (Vite builder), static files live in "public"
+mkdir public
+mkdir public\mock
+mkdir public\images
+mkdir public\styles
 
 echo.
 echo ==============================================================
-echo   3. Creating Default Mock Data
+echo   3. Creating Default Mock Data (public/mock/studies.json)
 echo ==============================================================
 
 (
@@ -80,7 +95,7 @@ echo   { "id": 101, "studyCode": "TOX-2025-001", "title": "14-Day Repeat Dose To
 echo   { "id": 102, "studyCode": "GEN-2025-002", "title": "Genotoxicity Micronucleus Assay in Mice", "phase": "Preclinical", "startDate": "2025-02-20", "status": "Completed" },
 echo   { "id": 103, "studyCode": "DART-2025-003", "title": "Developmental and Reproductive Toxicity Study", "phase": "Preclinical", "startDate": "2025-03-15", "status": "Planned" }
 echo ]
-) > src\assets\mock\studies.json
+) > public\mock\studies.json
 
 echo.
 echo ==============================================================
@@ -97,7 +112,9 @@ echo   Next Steps:
 echo      cd %PROJECT_NAME%
 echo      ng serve --open
 echo --------------------------------------------------------------
-echo   Then update 'study-list.component.ts' to load mock data.
+echo   Then update 'study-list.ts' to load data from 'mock/studies.json'.
+echo ==============================================================
+echo   Mock data URL at runtime: http://localhost:4200/mock/studies.json
 echo ==============================================================
 
 pause
