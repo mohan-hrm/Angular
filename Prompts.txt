@@ -1,0 +1,25 @@
+1
+my study-list files
+study-list.html
+study-list.scss
+study-list.ts
+
+2
+This time it is little better, again the problem is there
+it loads static text
+Preclinical Study Management System
+Active Studies
+ID	Study Code	Title	Phase	Start Date	Status
+
+in console it throws these errors 
+Failed to load resource: 4200/assets/mock/studies.json:1  the server responded with a status of 404 (Not Found)
+
+study-list.ts:35 Error loading studies: 
+HttpErrorResponse
+error	@	study-list.ts:35
+
+studies.json is present in D:\mohan\career building\project\Angular\preclinical-study-management\src\assets\mock\studies.json
+
+3.
+Now it works 
+Before going to next step update this batch file to have correct mock folder path in public

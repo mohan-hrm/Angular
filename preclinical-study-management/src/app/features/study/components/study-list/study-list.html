@@ -1,0 +1,28 @@
+<div class="study-list">
+  <h2>Active Studies</h2>
+
+  <div *ngIf="loading">Loading studies...</div>
+
+  <table *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Study Code</th>
+        <th>Title</th>
+        <th>Phase</th>
+        <th>Start Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of studies">
+        <td>{{ s.id }}</td>
+        <td>{{ s.studyCode }}</td>
+        <td>{{ s.title }}</td>
+        <td>{{ s.phase }}</td>
+        <td>{{ s.startDate }}</td>
+        <td>{{ s.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

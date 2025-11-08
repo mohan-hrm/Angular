@@ -1,0 +1,26 @@
+[
+  {
+    "id": 101,
+    "studyCode": "TOX-2025-001",
+    "title": "14-Day Repeat Dose Toxicity Study in Rats",
+    "phase": "Preclinical",
+    "startDate": "2025-01-10",
+    "status": "Ongoing"
+  },
+  {
+    "id": 102,
+    "studyCode": "GEN-2025-002",
+    "title": "Genotoxicity Micronucleus Assay in Mice",
+    "phase": "Preclinical",
+    "startDate": "2025-02-20",
+    "status": "Completed"
+  },
+  {
+    "id": 103,
+    "studyCode": "DART-2025-003",
+    "title": "Developmental and Reproductive Toxicity Study",
+    "phase": "Preclinical",
+    "startDate": "2025-03-15",
+    "status": "Planned"
+  }
+]
