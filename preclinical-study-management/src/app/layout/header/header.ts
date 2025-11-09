@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
@@ -36,7 +36,9 @@ export class Header {
           this.currentUrl.startsWith('/assignments') ||
           this.currentUrl.startsWith('/create-study') ||
           this.currentUrl.startsWith('/audit-trail') ||
-          this.currentUrl.startsWith('/templates')
+          this.currentUrl.startsWith('/templates') ||
+          this.currentUrl.startsWith('/study') ||
+          this.currentUrl.startsWith('/compound')
         );
 
       case 'animal':

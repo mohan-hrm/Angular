@@ -11,3 +11,9 @@ h2 {
   position: relative;
   z-index: 1; /* ✅ below sidebar */
 }
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  color: #111;
+}
+
