@@ -1,0 +1,120 @@
+/* src/app/shared/styles/_sidebar.scss */
+.sidebar {
+  position: relative;
+  z-index: 1001;
+  width: 260px;
+  background: #111827;
+  color: #e5e7eb;
+  padding: 10px;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  font-size: 13px;
+  cursor: default;
+}
+
+.sidebar__section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.sidebar__list,
+.sidebar__sub-list,
+.sidebar__sub-sub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* top-level item header (Studies / Templates) */
+.sidebar__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar__item-header:hover {
+  background: #1f2937;
+}
+
+/* first-level submenu (List / View, Create Study, Assignments, Audit) */
+.sidebar__sub-list {
+  margin-left: 12px;
+  margin-top: 4px;
+}
+
+.sidebar__sub-item {
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar__sub-item:hover {
+  background: #1f2937;
+}
+
+/* assignments line has arrow on the right */
+.assignments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* second-level submenu (Groups, Subgroups, etc.) */
+.sidebar__sub-sub-list {
+  margin-left: 20px;
+  margin-top: 4px;
+}
+
+.sidebar__sub-sub-item {
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar__sub-sub-item:hover {
+  background: #1f2937;
+}
+
+/* active route highlight */
+.sidebar__sub-item.active,
+.sidebar__sub-sub-item.active {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* arrows */
+.arrow {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+
+.sidebar__item-header,
+.sidebar__sub-item,
+.sidebar__sub-header,
+.sidebar__sub-sub-item {
+  cursor: pointer;
+}
+
+/* collapsed sidebar (when hamburger clicked) */
+.sidebar--collapsed {
+  width: 60px;
+  overflow: hidden;
+  transition: width 0.3s ease;
+
+  /* hide all text but keep icons or arrows hidden as well */
+  .sidebar__section-title,
+  .sidebar__item-header span,
+  .sidebar__sub-list,
+  .sidebar__sub-item,
+  .sidebar__sub-sub-list,
+  .arrow {
+    display: none !important;
+  }
+}

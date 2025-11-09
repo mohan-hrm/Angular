@@ -1,0 +1,49 @@
+<div class="app-shell">
+  <app-header (menuToggle)="toggleSidebar()"></app-header>
+
+  <div class="app-shell__body">
+    <!-- Sidebar -->
+    <ng-container [ngSwitch]="activeSection">
+      <app-sidebar-study
+        *ngSwitchCase="'study'"
+        [collapsed]="!sidebarOpen">
+      </app-sidebar-study>
+
+      <app-sidebar-animal
+        *ngSwitchCase="'animals'"
+        [collapsed]="!sidebarOpen">
+      </app-sidebar-animal>
+
+      <app-sidebar-measurements
+        *ngSwitchCase="'measurements'"
+        [collapsed]="!sidebarOpen">
+      </app-sidebar-measurements>
+
+      <app-sidebar-reports
+        *ngSwitchCase="'reports'"
+        [collapsed]="!sidebarOpen">
+      </app-sidebar-reports>
+
+      <app-sidebar-admin
+        *ngSwitchCase="'admin'"
+        [collapsed]="!sidebarOpen">
+      </app-sidebar-admin>
+
+      <app-sidebar-help
+        *ngSwitchCase="'help'"
+        [collapsed]="!sidebarOpen">
+      </app-sidebar-help>
+    </ng-container>
+
+    <!-- Main -->
+    <main class="app-shell__content" (click)="closeSidebarIfOpen()">
+      <router-outlet></router-outlet>
+    </main>
+
+    @if (sidebarOpen) {
+      <div class="app-shell__overlay" (click)="closeSidebar()"></div>
+    }
+  </div>
+
+  <app-footer></app-footer>
+</div>

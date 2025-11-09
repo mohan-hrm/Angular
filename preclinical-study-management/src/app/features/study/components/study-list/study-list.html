@@ -1,9 +1,10 @@
 <div class="study-list">
-  <h2>Active Studies</h2>
+<h2>Active Studies</h2>
 
-  <div *ngIf="loading">Loading studies...</div>
-
-  <table *ngIf="!loading">
+@if (loading) {
+  <p>Loading studies...</p>
+} @else {
+  <table>
     <thead>
       <tr>
         <th>ID</th>
@@ -15,14 +16,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let s of studies">
-        <td>{{ s.id }}</td>
-        <td>{{ s.studyCode }}</td>
-        <td>{{ s.title }}</td>
-        <td>{{ s.phase }}</td>
-        <td>{{ s.startDate }}</td>
-        <td>{{ s.status }}</td>
-      </tr>
+      @for (s of studies; track s.id) {
+        <tr>
+          <td>{{ s.id }}</td>
+          <td>{{ s.studyCode }}</td>
+          <td>{{ s.title }}</td>
+          <td>{{ s.phase }}</td>
+          <td>{{ s.startDate }}</td>
+          <td>{{ s.status }}</td>
+        </tr>
+      }
     </tbody>
   </table>
+}
+
 </div>

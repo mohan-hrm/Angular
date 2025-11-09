@@ -1,0 +1,83 @@
+<header class="header">
+  <div class="header__top-row">
+    <!-- ☰ hamburger -->
+    <button class="icon-btn" title="Toggle Menu" (click)="toggleMenu()">☰</button>
+
+    <div class="header__title">
+      🔬 Preclinical Study Management
+    </div>
+
+    <div class="header__search">
+      <input type="text" placeholder="Search studies, animals, compounds..." />
+    </div>
+
+    <div class="header__actions">
+      <button class="btn btn-primary">+ New</button>
+      <button class="icon-btn" title="Notifications">🔔</button>
+      <button class="icon-btn" title="Toggle theme">🌓</button>
+      <div class="header__user">
+        <span class="header__user-name">Mohan</span>
+      </div>
+    </div>
+  </div>
+
+    <nav class="header__nav">
+  <a
+    class="header__nav-link"
+    routerLink="/dashboard"
+    [class.header__nav-link--active]="isActive('dashboard')"
+  >
+    Dashboard
+  </a>
+
+  <a
+    class="header__nav-link"
+    routerLink="/studies"
+    [class.header__nav-link--active]="isActive('study')"
+  >
+    Study Management
+  </a>
+
+  <a
+    class="header__nav-link"
+    routerLink="/animals/list"
+    [class.header__nav-link--active]="isActive('animal')"
+  >
+    Animal Management
+  </a>
+
+  <a
+    class="header__nav-link"
+    routerLink="/measurements/entry"
+    [class.header__nav-link--active]="isActive('measurements')"
+  >
+    Measurements
+  </a>
+
+  <a
+    class="header__nav-link"
+    routerLink="/reports/study"
+    [class.header__nav-link--active]="isActive('reports')"
+  >
+    Reports
+  </a>
+
+  <a
+    class="header__nav-link"
+    routerLink="/admin/users"
+    [class.header__nav-link--active]="isActive('admin')"
+  >
+    Administration
+  </a>
+
+  <a
+    class="header__nav-link"
+    routerLink="/help/user-guide"
+    [class.header__nav-link--active]="isActive('help')"
+  >
+    Help
+  </a>
+</nav>
+
+
+</header>
