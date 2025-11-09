@@ -54,6 +54,19 @@ export const routes: Routes = [
   { path: 'assignments/measurement-schedule', component: MeasurementSchedule },
   { path: 'assignments/compounds', component: Compounds },
   { path: 'audit-trail', component: StudyAuditTrail },
+  
+  // Study Template pages
+{ path: 'templates/list', loadComponent: () => import('./features/study/templates/pages/list-view/list-view').then(m => m.ListView) },
+{ path: 'templates/assignments/groups', loadComponent: () => import('./features/study/templates/pages/assignments/groups/groups').then(m => m.Groups) },
+{ path: 'templates/assignments/subgroups', loadComponent: () => import('./features/study/templates/pages/assignments/subgroups/subgroups').then(m => m.Subgroups) },
+{ path: 'templates/audit', loadComponent: () => import('./features/study/templates/pages/audit-trail/audit-trail').then(m => m.AuditTrail) },
+
+// Other Study Setup
+{ path: 'study-phases', loadComponent: () => import('./features/study/pages/study-phases/study-phases').then(m => m.StudyPhases) },
+{ path: 'study-types', loadComponent: () => import('./features/study/pages/study-types/study-types').then(m => m.StudyTypes) },
+{ path: 'study-subtypes', loadComponent: () => import('./features/study/pages/study-subtypes/study-subtypes').then(m => m.StudySubtypes) },
+{ path: 'compound-management', loadComponent: () => import('./features/study/pages/compound-management/compound-management').then(m => m.CompoundManagement) },
+
 
   // Animal Management
   { path: 'animals/list', component: AnimalList },
@@ -79,7 +92,7 @@ export const routes: Routes = [
   { path: 'admin/users', component: Users },
   { path: 'admin/roles', component: RolesPermissions },
   { path: 'admin/settings', component: SystemSettings },
-  { path: 'admin/audit', component: AuditConfig },
+  { path: 'admin/audit-config', component: AuditConfig },
   { path: 'admin/master-data', component: MasterData },
 
   // Help

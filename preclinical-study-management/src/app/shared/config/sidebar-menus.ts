@@ -21,7 +21,6 @@ export const SIDEBAR_MENUS: Record<string, SidebarSection[]> = {
       title: 'Studies',
       items: [
         { label: 'List / View', route: '/studies' },
-        { label: 'Create Study', route: '/create-study' },
         {
           label: 'Assignments',
           expanded: false,
@@ -31,7 +30,14 @@ export const SIDEBAR_MENUS: Record<string, SidebarSection[]> = {
             { label: 'Cages', route: '/assignments/cages' },
             { label: 'Phases', route: '/assignments/phases' },
             { label: 'Measurement Schedule', route: '/assignments/measurement-schedule' },
-            { label: 'Compounds', route: '/assignments/compounds' }
+            {
+              label: 'Compounds',
+              route: '/assignments/compounds',
+              children: [
+                { label: 'Dosing Specification', route: '/assignments/compounds/dosing' },
+                { label: 'Add Compounds', route: '/assignments/compounds/add' }
+              ]
+            }
           ]
         },
         { label: 'Audit Trail', route: '/audit-trail' }
@@ -41,8 +47,24 @@ export const SIDEBAR_MENUS: Record<string, SidebarSection[]> = {
       title: 'Study Templates',
       items: [
         { label: 'List / View', route: '/templates/list' },
-        { label: 'Assignments', route: '/templates/assignments' },
+        {
+          label: 'Assignments',
+          expanded: false,
+          children: [
+            { label: 'Groups', route: '/templates/assignments/groups' },
+            { label: 'Subgroups', route: '/templates/assignments/subgroups' }
+          ]
+        },
         { label: 'Audit Trail', route: '/templates/audit' }
+      ]
+    },
+    {
+      title: 'Other Study Setup',
+      items: [
+        { label: 'Study Phases', route: '/study-phases' },
+        { label: 'Study Types', route: '/study-types' },
+        { label: 'Study Subtypes', route: '/study-subtypes' },
+        { label: 'Compound Management', route: '/compound-management' }
       ]
     }
   ],

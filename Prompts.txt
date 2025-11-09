@@ -165,3 +165,176 @@ I have more to do in future.
 With above requirements let us first create top menus, left side menus, footer page
 Before giving any code, first what are the top menus, left side menus, footer page you are thinking,
 Then we will do the study management
+
+5. No, Lets first define the top menus, left side menus, footer page
+With my requirements what are top menus
+Preclinical Study Management, Search Bar, Create / +New, Notifications, User Menu, Dark / Light Toggle, Admin / Setup (optional)
+Left Sidebar Navigation
+Dashboard, Study Management, Animal Management, Measurements, Reports, Administration, Help / Docs,
+I think the relations should study->(groups->subgroups)/(cages)->animals, so dont you thinks groups, subgroups, cages should be part of study management
+Give me complete navigations
+Like example what I am thinking is
+Study Management->Studies->Groups Assignments/Phase Assignments/Subgroup Assignments/Cage Assignments/Measurement Schedule/Compound assignments with dosage specification
+Study Management->Study Templates->Groups Assignments/Phase Assignments/Subgroup Assignments/Cage Assignments/Measurement Schedule/Compound assignments with dosage specification
+Animal Management->Filter by Study->Assign Groups/Assign Subgroup/Assign Cage/Mark Animal dead or restruct
+Measurement Management->Filter by study->When the entry should be real time of backentry, choose the phase, schedule or unschedule, then select which measurements for entry, select which animals for entry and do the entry.
+
+Something all above first design the menus
+
+6. I have some adjustment on this navigation Before I say give me the complete picture of top menu too like left side menu Does top menu changes according to side menu selection what you think
+7. 
+I want the side menu to be like this, if this is too complex,
+Based upon the topmenu selection the left can be adjusted like in top menu If I select the Study Management, it should display only Study management left menu and same for others, but that will increase the top menu, if I add more options like pharmacy, necrospy entry, next generation entry, pup entry, send submission.. 
+Or I want top menu to be adjusted by side menu, 
+Or what ever you think that is best for UI/UX experience as big company CTO
+Dashboard
+Study Management
+   ├── Studies - This will show list of studies
+		For each study (This menu should activate only when I have study selected for an edit or create)
+   │    ├── Assignments
+   │    │    ├── Groups
+   │    │    ├── Subgroups
+   │    │    ├── Cages
+   │    │    ├── Phases
+			 ├── Measurement Schedule
+   │    │    └── Compounds - ├── Compound setup, I should able to create Dosing specification, add compounds, for each dosage specified for each group or subgroup 
+   │    └── Audit Trail, what is this for? Is this to shows audits or version changes for all study fields?
+   ├── Study Templates - This will show list of studies
+		For each study template(This menu should activate only when I have study selected for an edit or create)
+   │    ├── Assignments (same as above)
+   │    └── Audit Trail
+   ├── Study Phases - This is list of Phases
+   ├── Study Types - This is list of Study types
+   ├── Study Subtypes - This is list of Study subtypes
+   └── Compound Management - This is list of Compound
+Animal Management
+   ├── Animal List - This will be huge number of animals, instead first thing it should be filtered by study
+		├── For each study list of animals
+		├── Group Assignment
+		├── Cage Assignment
+		├── Mark Dead / Restructure
+		└── Audit Trail - Why this is for?
+Measurement Management
+	   ├── For each study
+	   ├── Measurement Types
+			├── Default input
+				├── Schedule, Date of entry, real time or back entry
+					├── Each animal entry screen
+				├── Bulk Import by CSV or screen table
+			├── Edit
+				├── Filter by date of entries or Phase or day of phase
+					├── Show the list of data to be edited,
+						├──  Edit each data
+					├── Bulk Edit by CSV or screen table
+Reports & Analytics
+   ├── Study Reports
+   ├── Scheduled Reports
+   ├── Audit Reports
+   └── Charts / KPIs
+Administration / Setup
+   ├── Users
+   ├── Roles / Permissions
+   ├── System Settings
+   ├── Audit Config
+   └── Master Data
+Help / Documentation
+   ├── User Guide
+   ├── About
+   └── Support
+
+8.Yes it works few observation
+'ngIf' is deprecated.ngtsc(6385)
+common_module.d.d.ts(831, 8): The declaration was marked as deprecated here.
+study-list.ts(46, 16): Suggestion occurs in the template of component StudyList.
+
+Can you change it?
+Also, like Amazon side link, I want to be hidden and shown only If I click on top left dashes, Menu heading like label, also sub menu should be hidden and it should be shown only when click on arrow mark, this gives big space for screen
+
+9. first lets fix all other sidebar, then want to correct the sidebar links for study Management
+Top Menu is Dashboard, Study Management, Animal Management, Measurement Management, Reports, Administration, Help 
+For its top menu we need its own side menu
+Here is my overall side bar
+Study Management
+   ├── Studies - This will show list of studies
+		For each study (This menu should activate only when I have study selected for an edit or create)
+   │    ├── Assignments
+   │    │    ├── Groups
+   │    │    ├── Subgroups
+   │    │    ├── Cages
+   │    │    ├── Phases
+			 ├── Measurement Schedule
+   │    │    └── Compounds - ├── Compound setup, I should able to create Dosing specification, add compounds, for each dosage specified for each group or subgroup 
+   │    └── Audit Trail, what is this for? Is this to shows audits or version changes for all study fields?
+   ├── Study Templates - This will show list of studies
+		For each study template(This menu should activate only when I have study selected for an edit or create)
+   │    ├── Assignments (same as above)
+   │    └── Audit Trail
+   ├── Study Phases - This is list of Phases
+   ├── Study Types - This is list of Study types
+   ├── Study Subtypes - This is list of Study subtypes
+   └── Compound Management - This is list of Compound
+Animal Management
+   ├── Animal List - This will be huge number of animals, instead first thing it should be filtered by study
+		├── For each study list of animals
+		├── Group Assignment
+		├── Cage Assignment
+		├── Mark Dead / Restructure
+		└── Audit Trail - Why this is for?
+Measurement Management
+	   ├── For each study
+	   ├── Measurement Types
+			├── Default input
+				├── Schedule, Date of entry, real time or back entry
+					├── Each animal entry screen
+				├── Bulk Import by CSV or screen table
+			├── Edit
+				├── Filter by date of entries or Phase or day of phase
+					├── Show the list of data to be edited,
+						├──  Edit each data
+					├── Bulk Edit by CSV or screen table
+Reports & Analytics
+   ├── Study Reports
+   ├── Scheduled Reports
+   ├── Audit Reports
+   └── Charts / KPIs
+Administration / Setup
+   ├── Users
+   ├── Roles / Permissions
+   ├── System Settings
+   ├── Audit Config
+   └── Master Data
+Help / Documentation
+   ├── User Guide
+   ├── About
+   └── Support
+   
+10. replacing your changes causing me problem, I used different way which I will give you later for analysis but tell me any sidebar-*.html for study, measurement, report.. are useless now because it uses generic sidebar-generic.html
+
+11. I want to create page for these links
+{
+      title: 'Study Templates',
+      items: [
+        { label: 'List / View', route: '/templates/list' },
+        {
+          label: 'Assignments',
+          expanded: false,
+          children: [
+            { label: 'Groups', route: '/templates/assignments/groups' },
+            { label: 'Subgroups', route: '/templates/assignments/subgroups' }
+          ]
+        },
+        { label: 'Audit Trail', route: '/templates/audit' }
+      ]
+    },
+    {
+      title: 'Other Study Setup',
+      items: [
+        { label: 'Study Phases', route: '/study-phases' },
+        { label: 'Study Types', route: '/study-types' },
+        { label: 'Study Subtypes', route: '/study-subtypes' },
+        { label: 'Compound Management', route: '/compound-management' }
+      ]
+    }
+	
+This link alone not works goes to dashboard page instead of audit-config page
+ { label: 'Audit Config', route: '/admin/audit-config' },
