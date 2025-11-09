@@ -1,0 +1,46 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+/* Header always on top */
+app-header {
+  z-index: 1002;
+  position: relative;
+}
+
+/* Body holds sidebar + content */
+.app-shell__body {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+/* Sidebar positioning */
+app-sidebar {
+  z-index: 1001;
+  position: relative;
+}
+
+/* Main content area */
+.app-shell__content {
+  flex: 1;
+  background: #f9fafb;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay should only cover MAIN CONTENT, not the sidebar */
+.app-shell__overlay {
+  position: fixed;
+  top: 64px; /* Adjust if header height changes */
+  left: 260px; /* Sidebar width */
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: opacity 0.2s ease-in-out;
+}

@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+h2 {
+  margin-top: 0;         // removes extra white space above
+  margin-bottom: 0.75rem;
+  color: #1e3a8a;        // keep your nice blue shade
+  font-weight: 600;
+}
+.main-content {
+  flex: 1;
+  background: #f9fafb;
+  padding: 20px;
+  position: relative;
+  z-index: 1; /* ✅ below sidebar */
+}

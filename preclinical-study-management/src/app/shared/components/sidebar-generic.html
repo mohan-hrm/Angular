@@ -1,0 +1,32 @@
+<aside class="sidebar" [class.sidebar--collapsed]="collapsed">
+  <div *ngFor="let section of menu" class="sidebar__section">
+    <div class="sidebar__section-title">{{ section.title }}</div>
+
+    <ul class="sidebar__list">
+      <li *ngFor="let item of section.items" class="sidebar__item">
+        <ng-container *ngIf="item.children; else singleItem">
+          <div class="sidebar__item-header" (click)="toggleItem(item)">
+            <span>{{ item.label }}</span>
+            <span class="arrow">{{ item.expanded ? '▼' : '▶' }}</span>
+          </div>
+          <ul *ngIf="item.expanded" class="sidebar__sub-list">
+            <li *ngFor="let child of item.children"
+                class="sidebar__sub-item"
+                [routerLink]="child.route"
+                routerLinkActive="active">
+              {{ child.label }}
+            </li>
+          </ul>
+        </ng-container>
+
+        <ng-template #singleItem>
+          <li class="sidebar__sub-item"
+              [routerLink]="item.route"
+              routerLinkActive="active">
+            {{ item.label }}
+          </li>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</aside>

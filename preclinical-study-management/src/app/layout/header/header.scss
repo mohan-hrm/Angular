@@ -1,0 +1,104 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  background: #111827;
+  color: #f9fafb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header__top-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 16px;
+}
+
+.header__title {
+  font-weight: 600;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.header__search {
+  flex: 1;
+}
+
+.header__search input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.header__user {
+  padding-left: 8px;
+  border-left: 1px solid #4b5563;
+}
+
+.header__user-name {
+  font-size: 14px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 12px;
+  padding: 6px 16px 8px;
+  border-top: 1px solid #1f2937;
+  background: #0f172a;
+}
+
+.header__nav-link {
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #e5e7eb;
+}
+
+.header__nav-link--active,
+.header__nav-link:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.header__nav a,
+.header__nav-link {
+  text-decoration: none;           /* remove underline */
+  color: inherit;
+}
+
+.header__nav-link--active {
+  text-decoration: none;
+  border-bottom: 3px solid #2563eb; /* nice subtle indicator instead of underline */
+  font-weight: 600;
+  color: #2563eb;
+}

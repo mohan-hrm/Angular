@@ -129,3 +129,39 @@ pause
 
 Then update the code with comments,
 Explain each code that is written and explain with real time explanation
+
+4 Before going for next topic lets first format the page
+I want the page to look like an amazon or any real world application screen
+Like I said I want to build the preclinical study management application,
+
+Where the first screen will be login screen, but we will do that later
+
+The main screen should look like amazon screen or any real world application user friendly UI/UX experience like a dashboard, ability to create any thing like JIRA dashboard like table, charts, write a queries to filter and do the tables, charts, cards or anything.
+In this study Management I want to achieve
+showing the list of studies, list of phases, list of study types, list of study sub types, list of compounds or substances
+while creating study I want to choose what is the study type, what is the study subtype, what are the different phases it is going to be
+Specify the group types like Control group, Dose group or any group and number of animals for each group
+Specify the sub group number of animal per sub group how does the subgroup works?
+Specify the cage specification, whether the cage is multiple animal cage or single animal cage, sex separated cage, sex crossed cage, brother/sisters cages, something like that
+Assign number of animals to the study (includes Males and Females)
+Assign measurement for the study like Bodyweight, Dosing, Food consumption, Mass tracking or any generalized measurements, pathology measurement, gross observation, clinical observation 
+I should have also ability to assign the measurement for all animals in study, or selected groups in study, selected subgroups, selected cage number, selected animals.
+
+Once every thing is saved, allow to approve the study to proceed further for animal assignments. After approval, I want to do audit for every save
+
+Like study, I want to create a template for study with every options, so in future if I create study I will create from template, no need to go through all steps again.
+
+Then for each study, I should able to initiate the animals based upon the number of animals defined for study, assign animals to groups, subgroups, phases, assign the cage numbers.
+Also I should have ability to edit them, delete them, move from one to another.
+Mark animal dead or restruct , after first save, everything should be audited, who saves the entry, why saves the entry, what is the date of time of entry
+
+Then for each study, I should able to do the measurement entry for today as real time current date time or any backentry (ability to choose the date and time of entry)
+Then I should able to generate reports, schedule reports and show them in screen.
+
+after first save, everything should be audited, who saves the entry, why saves the entry, what is the date of time of entry
+
+I have more to do in future.
+
+With above requirements let us first create top menus, left side menus, footer page
+Before giving any code, first what are the top menus, left side menus, footer page you are thinking,
+Then we will do the study management
